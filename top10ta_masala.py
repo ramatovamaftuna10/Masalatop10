@@ -175,6 +175,122 @@
 # print(f"Sizning statusingiz:{natija.status()}") # A'lo
 
 ##6-Masala:
+# class Hisob:
+#     def __init__(self,raqam,egasi,balans):
+#         self.raqam = raqam
+#         self.egasi = egasi
+#         self.balans = balans
+#
+#     def kirim(self,summa):
+#         self.balans += summa
+#
+#     def chiqim(self,summa):
+#         self.balans -= summa
+#
+# class JangArmaMixin:
+#     def hisobla_foiz(self):
+#         return self.balans * self.foiz_stavka / 100
+#
+#     def foiz_qosh(self):
+#         self.balans += self.hisobla_foiz()
+#
+# class KreditMixin:
+#     def chiqim(self,summa):
+#         if self.balans - summa >= self.limit:
+#             self.balans -= summa
+#         else:
+#             return "Kredit limiti oshib ketdi"
+#
+# class VIPHisob(KreditMixin,JangArmaMixin,Hisob):
+#     def __init__(self,raqam,egasi,balans,foiz_stavka,limit):
+#         super().__init__(raqam, egasi, balans)
+#         self.foiz_stavka = foiz_stavka
+#         self.limit = limit
+#
+# vip = VIPHisob("001", "Karim", 2_000_000, foiz_stavka=12, limit=500_000)
+# vip.foiz_qosh()
+# print(vip.balans)
+# vip.chiqim(2_400_000)   # limit hisobga olinadi
+# print(vip.balans)
+
+##7-Masala:
+# class Kurs:
+#     def __init__(self, nom, davomiylik_hafta, narx):
+#         self.nom = nom
+#         self.davomiylik_hafta = davomiylik_hafta
+#         self.narx = narx
+#
+#     def malumot(self):
+#         return f"Kurs: {self.nom}, Davomiylik: {self.davomiylik_hafta} hafta, Narx: {self.narx}"
+#
+#
+# class OnlaynKurs(Kurs):
+#     def __init__(self, nom, davomiylik_hafta, narx, platforma):
+#         super().__init__(nom, davomiylik_hafta, narx)
+#         self.platforma = platforma
+#
+#     def malumot(self):
+#         m = super().malumot()
+#         return f"{m}, Platforma: {self.platforma}"
+#
+#
+# class OfflineKurs(Kurs):
+#     def __init__(self, nom, davomiylik_hafta, narx, manzil):
+#         super().__init__(nom, davomiylik_hafta, narx)
+#         self.manzil = manzil
+#
+#     def malumot(self):
+#         x = super().malumot()
+#         return f"{x}, Manzil: {self.manzil}"
+#
+#
+# kurslar = [
+#     OnlaynKurs("Python", 12, 1_800_000, "Coursera"),
+#     OfflineKurs("Kiberxavfsizlik", 40, 25_000_000, "Toshkent")
+# ]
+#
+# for kurs in kurslar:
+#     print(kurs.malumot())
+#
+
+##9-Masala:
+# from abc import ABC, abstractmethod
+# from typing import List
+#
+# class JamoaAzo(ABC):
+#     def __init__(self, ism):
+#         self.ism = ism
+#
+#     @abstractmethod
+#     def vazifa(self):
+#         return NotImplemented
+#
+# class BackendDasturchi(JamoaAzo):
+#     def vazifa(self):
+#         return "API va ma'lumotlar bazasi bilan ishlaydi"
+#
+# class FrontendDasturchi(JamoaAzo):
+#     def vazifa(self):
+#         return "UI va foydalanuvchi tajribasini yaratadi"
+#
+# class Tester(JamoaAzo):
+#     def vazifa(self):
+#         return "Tizimni test qiladi"
+#
+# def hisobot(azolar:List[JamoaAzo]):
+#     for azo in azolar:
+#         print(f"Ism: {azo.ism}, Vazifa: {azo.vazifa()}")
+#
+# jamoa = [
+#     BackendDasturchi("Marjona"),
+#     FrontendDasturchi("Rayxona"),
+#     Tester("Maftuna")
+# ]
+#
+# hisobot(jamoa)
+
+
+
 
 
 
