@@ -252,6 +252,46 @@
 # for kurs in kurslar:
 #     print(kurs.malumot())
 #
+#8-Masala:
+# class Taom:
+#     def __init__(self, nom, narx):
+#         self.nom = nom
+#         self.narx = narx
+#
+#     def tavsif(self):
+#         return f"Taom: {self.nom}, Narx: {self.narx}"
+#
+# class IssiqTaom(Taom):
+#     def __init__(self, nom, narx, kaloriya):
+#         super().__init__(nom, narx)
+#         self.kaloriya = kaloriya
+#
+#     def tavsif(self):
+#         return f"Taom: {self.nom}, Narx: {self.narx} so'm, Kaloriya: {self.kaloriya} kkal"
+#
+# class Ichimlik(Taom):
+#     def __init__(self, nom, narx, hajm_ml):
+#         super().__init__(nom, narx)
+#         self.hajm_ml = hajm_ml
+#
+#     def tavsif(self):
+#         return f"Ichimlik: {self.nom}, Narx: {self.narx} so'm, Hajmi: {self.hajm_ml} ml"
+#
+#     def chegirma_qollash(taomlar, foiz):
+#
+#         for taom in taomlar:
+#             chegirma_summasi = taom.narx * (foiz / 100)
+#             taom.narx -= chegirma_summasi
+#
+# osh = IssiqTaom("Palov", 30000, 850)
+# choy = Ichimlik("Ko'k choy", 5000, 500)
+# kabob = IssiqTaom("Shashlik", 15000, 450)
+#
+# menyular = [osh, choy, kabob]
+#
+# print(osh.tavsif())
+# print(choy.tavsif())
+# print(kabob.tavsif())
 
 ##9-Masala:
 # from abc import ABC, abstractmethod
@@ -289,6 +329,39 @@
 #
 # hisobot(jamoa)
 
+ ###10-Masala:
+# class QadamSanagich:
+#     def __init__(self, kunlik_maqsad, qadamlar):
+#         self.kunlik_maqsad = kunlik_maqsad
+#         self.qadamlar = qadamlar
+#
+#     def bajarilgan_kunlar(self):
+#         sanoq = 0
+#         for qadam in self.qadamlar:
+#             if qadam >= self.kunlik_maqsad:
+#                 sanoq += 1
+#             return sanoq
+#
+#     def ortalama_qadamlar(self):
+#          if not self.qadamlar:
+#              return 0
+#          return sum(self.qadamlar) / len(self.qadamlar)
+#
+# class MotivatsionQadamSanagich(QadamSanagich):
+#     def __init__(self, kunlik_maqsad, qadamlar):
+#         super().__init__(kunlik_maqsad, qadamlar)
+#
+#     def motivatsiya_xabari(self):
+#         if self.bajarilgan_kunlar() >= 5:
+#             return "Barakalla! Siz juda faol ekansiz!"
+#         else:
+#             return "Harakatni ko'proq oshiring!"
+#
+# hafta = [10000, 7500, 8200, 9000, 5000, 12000, 8000]
+# q = MotivatsionQadamSanagich(8000, hafta)
+# print(q.bajarilgan_kunlar())
+# print(q.ortalama_qadamlar())
+# print(q.motivatsiya_xabari())
 
 
 
